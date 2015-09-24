@@ -1,0 +1,30 @@
+{
+  "name": "gulp-es-next",
+  "version": "1.0.0",
+  "description": "Exports gulp's methods and pluings in a more ES6 way. Great to use within gupfile.babel.js.",
+  "main": "gulp-es-next.js",
+  "scripts": {
+    "test": "node node_modules/gulp/bin/gulp.js test",
+    "watch": "node node_modules/gulp/bin/gulp.js watch",
+    "build": "node node_modules/gulp/bin/gulp.js build"
+  },
+  "keywords": [
+    "gulp",
+    "es6",
+    "modules"
+  ],
+  "author": "Wesley Anemam <wesleylira@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-jasmine": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.1"
+  },
+  "dependencies": {
+    "gulp-load-plugins": "^1.0.0-rc.1"
+  }
+}
