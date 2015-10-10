@@ -4,9 +4,8 @@
   "description": "Exports gulp's methods and pluings in a more ES6 way. Great to use within gupfile.babel.js.",
   "main": "gulp-es-next.js",
   "scripts": {
-    "test": "node node_modules/gulp/bin/gulp.js test",
-    "watch": "node node_modules/gulp/bin/gulp.js watch",
-    "build": "node node_modules/gulp/bin/gulp.js build"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register specs/*.spec.js",
+    "build": "./node_modules/.bin/gulp.js"
   },
   "keywords": [
     "gulp",
@@ -16,13 +15,16 @@
   "author": "Wesley Anemam <wesleylira@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^5.8.23",
     "babel-core": "^5.8.25",
     "del": "^2.0.2",
+    "expect.js": "^0.3.1",
     "gulp": "^3.9.0",
-    "gulp-jasmine": "^2.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.4.1"
+    "gulp-uglify": "^1.4.1",
+    "istanbul": "^0.3.22",
+    "mocha": "^2.3.3"
   },
   "dependencies": {
     "gulp-load-plugins": "^1.0.0-rc.1"
