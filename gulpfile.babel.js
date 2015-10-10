@@ -10,7 +10,6 @@ task('transpile', ['clean'], () => {
 		.pipe($.uglify())
 		.pipe($.rename({suffix: '.min'}))
 		.pipe(dest('dist/'))
-		.pipe($.rename({suffix: '.map'}))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(dest('dist/'))
 })
