@@ -1,5 +1,5 @@
 # gulp-es-next
-![Build Status](https://travis-ci.org/wesleyanemam/gulp-es-next.svg)
+[![Build Status](https://travis-ci.org/wesleyanemam/gulp-es-next.svg)](https://travis-ci.org/wesleyanemam/gulp-es-next)
 
 Exports gulp's methods and pluings in a more ES6 way. Great to use within gupfile.babel.js
 
