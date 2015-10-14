@@ -1,4 +1,6 @@
 # gulp-es-next
+![Build Status](https://travis-ci.org/wesleyanemam/gulp-es-next.svg)
+
 Exports gulp's methods and pluings in a more ES6 way. Great to use within gupfile.babel.js
 
 # ES6 with Gulp
