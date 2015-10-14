@@ -50,3 +50,6 @@ task('watch', () => watch('scripts/*.js', [transpile]))
 
 task('default', ['watch'])
 ```
+
+# Real use of gulp-es-next
+This project is the first one to use gulp-es-next itself. Check out the [gulpfile.babel.js](../gulpfile.babel.js) file and also the tests in [gulp-es-next.spec.js](../specs/gulp-es-next.spec.js).
