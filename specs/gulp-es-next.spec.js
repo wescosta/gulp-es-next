@@ -5,40 +5,44 @@ import expect from 'expect.js'
 
 describe('gulp-es-next', () => {
 	it('should export gulp itself', () => {
-		expect(gulp).to.be(require('gulp'))
+		expect(gulp).to.be.ok(require('gulp'))
+
+		expect(gulp).to.have.property('src')
+		expect(gulp).to.have.property('dest')
+		expect(gulp).to.have.property('task')
+		expect(gulp).to.have.property('watch')
 	})
 
 	it('should export gulp.src method', () => {
-		expect(src).to.be(gulp.src)
+		expect(src).to.be.ok(gulp.src)
 	})
 
 	it('should export gulp.dest method', () => {
-		expect(dest).to.be(gulp.dest)
+		expect(dest).to.be.ok(gulp.dest)
 	})
 
 	it('should export gulp.task method', () => {
-		expect(task).to.be(gulp.task)
+		expect(task).to.be.ok(gulp.task)
 	})
 
 	it('should export gulp.watch method', () => {
-		expect(watch).to.be(gulp.watch)
+		expect(watch).to.be.ok(gulp.watch)
 	})
 
 	it('should load gulp, its methods and plugins with require', () => {
-		let gulp = require('gulp-es-next').gulp,
-				original = require('gulp')
+		let _ = require('gulp-es-next'),
+				gulp = require('gulp')
 
-		expect(gulp.src).to.be(original.src)
-		expect(gulp.dest).to.be(original.dest)
-		expect(gulp.task).to.be(original.task)
-		expect(gulp.watch).to.be(original.watch)
+		expect(_.gulp.src).to.be.ok(gulp.src)
+		expect(_.gulp.dest).to.be.ok(gulp.dest)
+		expect(_.gulp.task).to.be.ok(gulp.task)
+		expect(_.gulp.watch).to.be.ok(gulp.watch)
 
-		expect(gulp.$).to.be(require('gulp-load-plugins'))
+		expect(_.$).to.eql(require('gulp-load-plugins')())
 	})
 
 	it('should export gulp.plugins defined in package.json in the $ object', () => {
-		expect($).to.be(require('gulp-load-plugins'))
-		expect($.uglify).to.not.be.empty()
-		expect($.sourcemaps).to.not.be.empty()
+		expect($.uglify).to.be.a('function')
+		expect($.sourcemaps).to.be.ok()
 	})
 })
