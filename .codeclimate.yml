@@ -1,15 +1,15 @@
 engines:
   eslint:
     enabled: true
+	 	ecmaFeatures:
+	 		modules: true
   env:
 	  node: true
 	 	mocha: true
 	 	es6: true
- 	ecmaFeatures:
- 		modules: true
 ratings:
   paths:
-  - "**.js"
+  - "node_modules/gulp-es-next.js"
 exclude_paths:
 - node_modules/*
 - !node_modules/gulp-es-next.js
