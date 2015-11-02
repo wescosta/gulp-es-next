@@ -5,7 +5,7 @@
   "main": "gulp-es-next.js",
   "scripts": {
     "test": "babel-node ./node_modules/.bin/isparta cover --report text --report html ./node_modules/.bin/_mocha -- --reporter dot specs/*.spec.js",
-    "build": "gulp"
+    "build": "gulp build"
   },
   "keywords": [
     "gulp",

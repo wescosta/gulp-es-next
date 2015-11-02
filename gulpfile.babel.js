@@ -3,19 +3,23 @@
 import {src, dest, task, $} from 'gulp-es-next'
 import del from 'del'
 
-task('transpile', ['clean'], () => {
+const path = {
+	dist: 'dist/'
+}
+
+task('js', ['clean'], () => {
 	src('node_modules/gulp-es-next.js')
-		.pipe($.sourcemaps.init())
-		.pipe(dest('dist/'))
-		.pipe($.uglify())
-		.pipe($.rename({suffix: '.min'}))
-		.pipe(dest('dist/'))
-		.pipe($.sourcemaps.write('.'))
-		.pipe(dest('dist/'))
+		.pipe($.rename('index.js'))
+		.pipe(dest(path.dist))
+})
+
+task('copy', ['clean'], () => {
+	src(['license', 'readme.md', 'package.json'])
+		.pipe(dest(path.dist))
 })
 
 task('clean', done => {
 	del('dist').then(() => done())
 })
 
-task('default', ['transpile'])
+task('build', ['js', 'copy'])
